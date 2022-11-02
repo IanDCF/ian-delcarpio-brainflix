@@ -1,0 +1,28 @@
+@use "/src/styles/partials/breakpoints.scss" as bp;
+@use "/src/styles/partials/colors.scss" as color;
+
+.video-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: color.$darkblack;
+  @include bp.tablet {
+    padding: 0 4.5rem;
+  }
+}
+
+.video {
+  @include bp.mobile {
+    width: 100%;
+  }
+
+  @include bp.tablet {
+    width: 100%;
+  }
+
+  @include bp.desktop {
+    margin: 0 auto;
+    max-width: 107rem;
+  }
+}
