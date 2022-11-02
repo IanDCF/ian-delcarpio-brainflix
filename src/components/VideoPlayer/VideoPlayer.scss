@@ -10,6 +10,9 @@
   @include bp.tablet {
     padding: 0 4.5rem;
   }
+  @include bp.desktop {
+    padding: 0;
+  }
 }
 
 .video {
