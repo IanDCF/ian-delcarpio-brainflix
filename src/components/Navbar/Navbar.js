@@ -19,10 +19,10 @@ const Navbar = () => {
           </div>
 
           <UploadBtn />
-        </div>
 
-        <div className="nav__pp-tab-desk">
-          <ProfilePic />
+          <div className="nav__pp-tab-desk">
+            <ProfilePic />
+          </div>
         </div>
       </nav>
     </header>

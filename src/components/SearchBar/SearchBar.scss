@@ -6,10 +6,16 @@
   border: 1.4px solid color.$mercury;
   border-radius: 4px;
   background-color: color.$alabaster;
-  width: 100%;
-
   display: flex;
   align-items: center;
+
+  @include bp.mobile {
+    width: 100%;
+  }
+
+  @include bp.tablet {
+    width: 31vw;
+  }
 
   &__icon {
     width: 2rem;

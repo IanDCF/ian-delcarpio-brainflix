@@ -2,14 +2,18 @@
 @use "/src/styles/partials/colors.scss" as color;
 
 .profile-pic {
-  width: 4.5rem;
-  height: 4.5rem;
   border-radius: 50%;
   background-image: url("../../assets/images/Mohan-muruge.jpg");
   background-position: center;
   background-size: cover;
 
   @include bp.mobile {
+    width: 4.5rem;
+    height: 4.5rem;
     margin-left: 2rem;
+  }
+  @include bp.tablet {
+    width: 5rem;
+    height: 5rem;
   }
 }
