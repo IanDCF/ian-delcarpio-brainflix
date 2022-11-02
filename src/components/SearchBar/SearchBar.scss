@@ -14,7 +14,11 @@
   }
 
   @include bp.tablet {
-    width: 31vw;
+    width: 32vw;
+  }
+
+  @include bp.desktop {
+    width: 30rem;
   }
 
   &__icon {

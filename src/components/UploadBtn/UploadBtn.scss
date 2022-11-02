@@ -16,6 +16,10 @@
     width: 20vw;
   }
 
+  @include bp.desktop {
+    width: 19rem;
+  }
+
   &__icon {
     position: absolute;
     left: 1.5rem;
