@@ -1,0 +1,23 @@
+@use "/src/styles/partials/breakpoints.scss" as bp;
+@use "/src/styles/partials/colors.scss" as color;
+
+.upload {
+  background-color: color.$blue;
+  padding: 1.5rem 1rem;
+  border-radius: 4px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    width: 2.5rem;
+    color: color.$white;
+  }
+
+  &__text {
+    color: color.$white;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 0 auto;
+  }
+}

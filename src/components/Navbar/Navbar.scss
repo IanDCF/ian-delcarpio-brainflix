@@ -1,0 +1,47 @@
+@use "/src/styles/partials/breakpoints.scss" as bp;
+@use "/src/styles/partials/colors.scss" as color;
+
+.nav-container {
+  width: 100%;
+  padding: 1.5rem 2rem;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  &__logo {
+    width: 15rem;
+    margin-bottom: 2rem;
+  }
+
+  &__div-one {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  &__div-two {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  &__pp-mobile {
+    @include bp.tablet {
+      display: none;
+    }
+    @include bp.desktop {
+      display: none;
+    }
+  }
+  &__pp-tab-desk {
+    @include bp.mobile {
+      display: none;
+    }
+  }
+}

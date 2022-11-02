@@ -1,0 +1,33 @@
+@use "/src/styles/partials/breakpoints.scss" as bp;
+@use "/src/styles/partials/colors.scss" as color;
+@use "/src/styles/partials/fonts.scss" as *;
+
+.search {
+  border: 1.4px solid color.$mercury;
+  border-radius: 4px;
+  background-color: color.$alabaster;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    width: 2rem;
+    margin: 1rem 1rem;
+  }
+
+  &__input {
+    background-color: color.$alabaster;
+    outline: none;
+    border: none;
+    &::placeholder {
+      font-family: "Avenir";
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: color.$darkblack;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
