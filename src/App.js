@@ -1,6 +1,7 @@
 // import { useState } from "react";
 import "./App.scss";
 import Navbar from "./components/Navbar/Navbar";
+import VideoDetails from "./components/VideoDetails/VideoDetails";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 // import { getVideos, getVideoDetails } from "./utils/utils";
 
@@ -14,6 +15,7 @@ function App() {
     <>
       <Navbar />
       <VideoPlayer />
+      <VideoDetails />
     </>
   );
 }
