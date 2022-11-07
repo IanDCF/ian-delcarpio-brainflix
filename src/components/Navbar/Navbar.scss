@@ -1,0 +1,84 @@
+@use "/src/styles/partials/breakpoints.scss" as bp;
+@use "/src/styles/partials/colors.scss" as color;
+
+.nav-container {
+  width: 100%;
+
+  @include bp.mobile {
+    padding: 2rem 2rem;
+  }
+
+  @include bp.tablet {
+    padding: 2rem 4.5rem;
+  }
+}
+
+.nav {
+  display: flex;
+  width: 100%;
+  align-items: center;
+
+  @include bp.mobile {
+    flex-direction: column;
+  }
+
+  @include bp.tablet {
+    justify-content: space-between;
+  }
+
+  @include bp.desktop {
+    margin: 0 auto;
+    max-width: 128rem;
+  }
+
+  &__logo {
+    @include bp.mobile {
+      width: 14rem;
+      margin-bottom: 2rem;
+    }
+    @include bp.tablet {
+      width: 14rem;
+    }
+    @include bp.tablet {
+      width: 14rem;
+    }
+  }
+
+  &__div-one {
+    display: flex;
+    @include bp.mobile {
+      flex-direction: column;
+      width: 100%;
+    }
+    @include bp.tablet {
+      justify-content: space-between;
+      width: 69%;
+    }
+    @include bp.desktop {
+      width: 49%;
+    }
+  }
+
+  &__div-two {
+    display: flex;
+    @include bp.mobile {
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__pp-mobile {
+    @include bp.tablet {
+      display: none;
+    }
+    @include bp.desktop {
+      display: none;
+    }
+  }
+  &__pp-tab-desk {
+    @include bp.mobile {
+      display: none;
+    }
+  }
+}
