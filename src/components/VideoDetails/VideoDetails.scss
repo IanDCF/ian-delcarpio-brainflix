@@ -287,6 +287,10 @@
     align-items: center;
     position: relative;
     border: none;
+
+    &:hover {
+      background-color: color.$darkblue;
+    }
     @include bp.mobile {
       width: 100%;
     }
