@@ -18,14 +18,17 @@
 .video {
   @include bp.mobile {
     width: 100%;
+    max-height: 22.5rem;
   }
 
   @include bp.tablet {
     width: 100%;
+    height: 48rem;
   }
 
   @include bp.desktop {
     margin: 0 auto;
     max-width: 107rem;
+    height: 59rem;
   }
 }

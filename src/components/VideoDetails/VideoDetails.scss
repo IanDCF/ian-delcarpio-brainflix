@@ -3,14 +3,21 @@
 @use "../../styles/partials/fonts.scss" as *;
 
 .details-container {
-  width: 100%;
-
   @include bp.mobile {
     padding: 2rem 2rem;
+    width: 100%;
   }
 
   @include bp.tablet {
     padding: 3rem 4.5rem;
+    width: 100%;
+  }
+
+  @include bp.desktop {
+    padding: 4.5rem 0 0 0;
+    margin: 0;
+    width: 70%;
+    border-right: 1.5px solid color.$mercury;
   }
 }
 
@@ -37,6 +44,7 @@
     @include bp.tablet {
       font-weight: 700;
       font-size: 4rem;
+      padding-right: 3rem;
     }
   }
 
@@ -48,7 +56,8 @@
       height: 10rem;
       padding: 2rem 0;
     }
-    @include bp.tablet {
+    @include bp.desktop {
+      padding-right: 3rem;
     }
   }
 
@@ -123,6 +132,10 @@
     @include bp.tablet {
       padding: 3.5rem 0;
     }
+
+    @include bp.tablet {
+      padding: 3.5rem 3rem 3.5rem 0;
+    }
     p {
       margin: 0;
       color: color.$black;
@@ -168,6 +181,11 @@
     @include bp.tablet {
       padding: 3rem 0;
     }
+
+    @include bp.desktop {
+      justify-content: space-between;
+      padding: 3rem 3rem 3rem 0;
+    }
   }
 
   &__form-pp {
@@ -181,6 +199,10 @@
     @include bp.tablet {
       width: 8.5%;
     }
+
+    @include bp.desktop {
+      width: none;
+    }
   }
 
   &__form-pp-div {
@@ -192,6 +214,9 @@
       margin-right: 2.3rem;
       margin-top: 2.52rem;
     }
+    @include bp.desktop {
+      margin: 2rem 0 0 0.5rem;
+    }
   }
 
   &__form {
@@ -201,6 +226,12 @@
 
     @include bp.tablet {
       width: 92%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include bp.desktop {
+      width: 87%;
       display: flex;
       justify-content: space-between;
     }
@@ -235,6 +266,10 @@
     }
     @include bp.tablet {
       height: 5rem;
+    }
+    @include bp.desktop {
+      height: 5rem;
+      width: 97%;
     }
 
     &::placeholder {
@@ -280,11 +315,11 @@
   &__comments-list {
     display: flex;
     flex-direction: column;
-    border-bottom: 1.5px solid color.$mercury;
   }
 
   &__comment {
     display: flex;
+    border-bottom: 1.5px solid color.$mercury;
 
     @include bp.mobile {
       padding: 1.5rem 0;
@@ -292,6 +327,14 @@
 
     @include bp.tablet {
       padding: 3rem 0;
+    }
+
+    @include bp.desktop {
+      justify-content: space-between;
+      padding: 3rem 3rem 3rem 0;
+      &:last-child {
+        border-bottom: none;
+      }
     }
   }
 
@@ -322,6 +365,12 @@
       width: 5rem;
       height: 5rem;
     }
+
+    @include bp.tablet {
+      margin: 0 0 0 0;
+      width: 5rem;
+      height: 5rem;
+    }
   }
 
   &__comment-info {
@@ -331,6 +380,10 @@
 
     @include bp.tablet {
       width: 92%;
+    }
+
+    @include bp.desktop {
+      width: 86.5%;
     }
   }
 

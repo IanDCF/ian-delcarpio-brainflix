@@ -2,19 +2,22 @@ import "./VideoDetails.scss";
 import ViewsIcon from "../../assets/icons/views.svg";
 import LikesIcon from "../../assets/icons/likes.svg";
 import ProfilePic from "../ProfilePic/ProfilePic";
-import details from "../../data/video-details.json";
 import CommentIcon from "../../assets/icons/add_comment.svg";
 
-const VideoDetails = () => {
+const VideoDetails = ({ video }) => {
+  const getDate = (timestamp) => {
+    let date = new Date(timestamp).toLocaleDateString("en-US");
+    return date;
+  };
   return (
     <div className="details-container">
       <div className="details">
         <div className="details__all">
-          <h1 className="details__title">{details[0].title}</h1>
+          <h1 className="details__title">{video.title}</h1>
 
           <div className="details__block">
             <div className="details__block-div">
-              <p className="details__name">By {details[0].channel}</p>
+              <p className="details__name">By {video.channel}</p>
               <p className="details__date">07/11/2021</p>
             </div>
             <div className="details__block-div">
@@ -24,7 +27,7 @@ const VideoDetails = () => {
                   src={ViewsIcon}
                   alt="Views Icon"
                 />
-                <p className="details__stats-total">{details[0].views}</p>
+                <p className="details__stats-total">{video.views}</p>
               </div>
               <div className="details__stats">
                 <img
@@ -32,13 +35,13 @@ const VideoDetails = () => {
                   src={LikesIcon}
                   alt="Likes Icon"
                 />
-                <p className="details__stats-total">{details[0].likes}</p>
+                <p className="details__stats-total">{video.likes}</p>
               </div>
             </div>
           </div>
 
           <div className="details__description">
-            <p>{details[0].description}</p>
+            <p>{video.description}</p>
           </div>
 
           <div className="details__comments-number">
@@ -78,29 +81,9 @@ const VideoDetails = () => {
           </div>
 
           <div className="details__comments-list">
-            <div className="details__comment">
-              <div className="details__comment-pp">
-                <div className="details__pp"></div>
-              </div>
-
-              <div className="details__comment-info">
-                <div className="details__comment-name-date">
-                  <div className="details__comment-name">
-                    {details[0].comments[0].name}
-                  </div>
-                  <div className="details__comment-date">
-                    {details[0].comments[0].timestamp}
-                  </div>
-                </div>
-
-                <div className="details__comment-text">
-                  {details[0].comments[0].comment}
-                </div>
-              </div>
-            </div>
-            {/* {details[0].comments.forEach((comment) => {
+            {video.comments.map((comment) => {
               return (
-                <div className="details__comment">
+                <div className="details__comment" key={comment.id}>
                   <div className="details__comment-pp">
                     <div className="details__pp"></div>
                   </div>
@@ -111,7 +94,7 @@ const VideoDetails = () => {
                         {comment.name}
                       </div>
                       <div className="details__comment-date">
-                        {comment.timestamp}
+                        {getDate(comment.timestamp)}
                       </div>
                     </div>
 
@@ -121,7 +104,7 @@ const VideoDetails = () => {
                   </div>
                 </div>
               );
-            })} */}
+            })}
           </div>
         </div>
       </div>

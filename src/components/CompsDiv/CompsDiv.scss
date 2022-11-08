@@ -1,0 +1,21 @@
+@use "/src/styles/partials/breakpoints.scss" as bp;
+@use "/src/styles/partials/colors.scss" as color;
+
+.comps-div {
+  display: flex;
+
+  @include bp.mobile {
+    flex-direction: column;
+  }
+
+  @include bp.tablet {
+    flex-direction: column;
+  }
+
+  @include bp.desktop {
+    flex-direction: row;
+    padding: 0 16rem;
+    max-width: 160rem;
+    margin: 0 auto;
+  }
+}
