@@ -5,6 +5,10 @@ import ProfilePic from "../ProfilePic/ProfilePic";
 import CommentIcon from "../../assets/icons/add_comment.svg";
 
 const VideoDetails = ({ video }) => {
+  const getDate = (timestamp) => {
+    let date = new Date(timestamp).toLocaleDateString("en-US");
+    return date;
+  };
   return (
     <div className="details-container">
       <div className="details">
@@ -90,7 +94,7 @@ const VideoDetails = ({ video }) => {
                         {comment.name}
                       </div>
                       <div className="details__comment-date">
-                        {comment.timestamp}
+                        {getDate(comment.timestamp)}
                       </div>
                     </div>
 
