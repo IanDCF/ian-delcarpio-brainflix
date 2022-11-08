@@ -1,0 +1,121 @@
+@use "../../styles/partials/breakpoints.scss" as bp;
+@use "../../styles/partials/colors.scss" as color;
+@use "../../styles/partials/fonts.scss" as *;
+
+.videos-container {
+  @include bp.mobile {
+    padding: 0 2rem 1rem 2rem;
+    width: 100%;
+  }
+
+  @include bp.tablet {
+    padding: 0 4.5rem 3rem 4.5rem;
+    width: 100%;
+  }
+
+  @include bp.desktop {
+    padding: 4.5rem 0 4rem 3rem;
+    width: 32.5%;
+  }
+}
+
+.videos {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    color: color.$silver;
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    @include bp.mobile {
+      margin: 0 0 2rem 0;
+    }
+    @include bp.tablet {
+      margin: 0 0 3rem 0;
+    }
+  }
+
+  &__video {
+    width: 100%;
+    display: flex;
+
+    @include bp.mobile {
+      margin: 0 0 1.5rem 0;
+    }
+    @include bp.tablet {
+      margin: 0 0 3rem 0;
+    }
+
+    @include bp.desktop {
+      margin: 0 0 3rem 0;
+    }
+  }
+
+  &__video-thumbnail {
+    display: flex;
+    margin-right: 2rem;
+  }
+
+  &__thumbnail {
+    margin: 0 auto;
+    background-color: color.$mercury;
+    background-position: center;
+    background-size: cover;
+    border-radius: 4px;
+
+    @include bp.mobile {
+      width: 13rem;
+      height: 8rem;
+    }
+    @include bp.tablet {
+      width: 14.2rem;
+      height: 8.5rem;
+    }
+  }
+
+  &__video-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include bp.mobile {
+      width: 100%;
+    }
+
+    @include bp.tablet {
+      width: 25%;
+    }
+    @include bp.desktop {
+      width: 100%;
+    }
+  }
+
+  &__info-title {
+    margin: 0;
+    color: color.$black;
+    font-weight: 600;
+
+    @include bp.mobile {
+      font-size: 1.6rem;
+    }
+
+    @include bp.tablet {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__info-channel {
+    margin: 0;
+    color: color.$black;
+    font-weight: 400;
+    padding-bottom: 0.5rem;
+
+    @include bp.mobile {
+      font-size: 1.65rem;
+    }
+    @include bp.tablet {
+      font-size: 1.75rem;
+    }
+  }
+}

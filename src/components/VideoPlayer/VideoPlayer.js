@@ -1,17 +1,11 @@
 import React from "react";
 import "./VideoPlayer.scss";
-import VideoDetails from "../../data/video-details.json";
-// import VideoList from "../../data/videos.json";
 
-const VideoPlayer = () => {
+const VideoPlayer = ({ video }) => {
   return (
     <>
       <div className="video-container">
-        <video
-          className="video"
-          poster={VideoDetails[0].image}
-          type="video/mp4"
-        />
+        <video className="video" poster={video.image} type="video/mp4" />
       </div>
     </>
   );
