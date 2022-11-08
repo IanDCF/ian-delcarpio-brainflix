@@ -8,6 +8,9 @@
   display: flex;
   align-items: center;
   position: relative;
+  &:hover {
+    background-color: color.$darkblue;
+  }
 
   @include bp.mobile {
     width: 100%;
