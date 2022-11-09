@@ -1,7 +1,7 @@
 @use "/src/styles/partials/breakpoints.scss" as bp;
 @use "/src/styles/partials/colors.scss" as color;
 
-.upload {
+.upload-btn {
   background-color: color.$blue;
   padding: 1.5rem 1rem;
   border-radius: 4px;
