@@ -10,7 +10,7 @@
   }
 
   @include bp.tablet {
-    padding: 2rem 4.5rem;
+    padding: 0 4.5rem;
   }
 }
 
@@ -27,10 +27,24 @@
       font-weight: 600;
       margin: 1rem 0;
     }
+
+    @include bp.tablet {
+      font-size: 4rem;
+      font-weight: 700;
+      margin: 4.5rem 0 3rem 0;
+    }
   }
 
   &__form {
     @include bp.mobile {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include bp.tablet {
+      border-top: 1.3px solid color.$mercury;
+      border-bottom: 1.3px solid color.$mercury;
+      padding: 3.5rem 0 3rem 0;
       display: flex;
       flex-direction: column;
     }
@@ -39,7 +53,14 @@
   &__form-thumbnail {
     display: flex;
     flex-direction: column;
-    margin-bottom: 2.2rem;
+
+    @include bp.mobile {
+      margin-bottom: 2.2rem;
+    }
+
+    @include bp.tablet {
+      margin-bottom: 3rem;
+    }
   }
 
   &__subheaders {
@@ -50,10 +71,20 @@
       font-size: 1.6rem;
       margin-bottom: 1rem;
     }
+
+    @include bp.tablet {
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
   }
 
   &__form-image {
     border-radius: 4px;
+
+    @include bp.tablet {
+      width: 44rem;
+    }
   }
 
   &__form-input {
@@ -70,6 +101,10 @@
     @include bp.mobile {
       margin-bottom: 2.2rem;
     }
+
+    @include bp.tablet {
+      margin-bottom: 3rem;
+    }
   }
 
   &__input-text {
@@ -83,6 +118,11 @@
       font-family: "Avenir";
       color: color.$darkblack;
     }
+  }
+
+  &__form-description {
+    @extend .upload__form-title;
+    margin-bottom: 0;
   }
 
   &__input-textarea {
@@ -101,6 +141,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+
+    @include bp.tablet {
+      display: flex;
+      margin: 3rem 0;
+      flex-direction: row-reverse;
     }
   }
 
@@ -123,6 +169,7 @@
 
     @include bp.tablet {
       width: 20vw;
+      margin-right: 3.5rem;
     }
 
     @include bp.desktop {
