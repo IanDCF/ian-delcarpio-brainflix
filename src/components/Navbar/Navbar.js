@@ -3,12 +3,15 @@ import SearchBar from "../SearchBar/SearchBar";
 import UploadBtn from "../UploadBtn/UploadBtn";
 import ProfilePic from "../ProfilePic/ProfilePic";
 import Logo from "../../assets/logo/BrainFlix-logo.svg";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <header className="nav-container">
       <nav className="nav">
-        <img className="nav__logo" src={Logo} alt="BrainFlix logo" />
+        <Link to="/">
+          <img className="nav__logo" src={Logo} alt="BrainFlix logo" />
+        </Link>
 
         <div className="nav__div-one">
           <div className="nav__div-two">

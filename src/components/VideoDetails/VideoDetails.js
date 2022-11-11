@@ -45,7 +45,7 @@ const VideoDetails = ({ video }) => {
           </div>
 
           <div className="details__comments-number">
-            <p>3 Comments</p>
+            <p>{video.comments.length} Comments</p>
           </div>
 
           <div className="details__comments-form">
