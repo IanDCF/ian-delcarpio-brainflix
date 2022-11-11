@@ -11,6 +11,10 @@
   @include bp.tablet {
     padding: 2rem 4.5rem;
   }
+
+  @include bp.desktop {
+    border-bottom: 1.5px solid color.$mercury;
+  }
 }
 
 .nav {
