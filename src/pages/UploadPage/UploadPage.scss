@@ -1,0 +1,218 @@
+@use "/src/styles/partials/breakpoints.scss" as bp;
+@use "/src/styles/partials/colors.scss" as color;
+
+.upload-container {
+  width: 100%;
+  border-top: 1.5px solid color.$mercury;
+
+  @include bp.mobile {
+    padding: 2rem 2rem;
+  }
+
+  @include bp.tablet {
+    padding: 0 4.5rem;
+  }
+
+  @include bp.desktop {
+    margin: 0 auto;
+    max-width: 136rem;
+    border: none;
+  }
+}
+
+.upload {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    margin: 0;
+    color: color.$black;
+
+    @include bp.mobile {
+      font-size: 3.1rem;
+      font-weight: 600;
+      margin: 1rem 0;
+    }
+
+    @include bp.tablet {
+      font-size: 4rem;
+      font-weight: 700;
+      margin: 4.5rem 0 3rem 0;
+    }
+  }
+
+  &__form {
+    display: flex;
+    @include bp.mobile {
+      flex-direction: column;
+    }
+
+    @include bp.tablet {
+      border-top: 1.3px solid color.$mercury;
+      border-bottom: 1.3px solid color.$mercury;
+      padding: 3.5rem 0 3rem 0;
+      flex-direction: column;
+    }
+
+    @include bp.desktop {
+      flex-direction: row;
+      padding: 3rem 0 1rem 0;
+    }
+  }
+
+  &__form-thumbnail {
+    display: flex;
+    flex-direction: column;
+
+    @include bp.mobile {
+      margin-bottom: 2.2rem;
+    }
+
+    @include bp.tablet {
+      margin-bottom: 3rem;
+    }
+
+    @include bp.desktop {
+      margin-right: 3rem;
+    }
+  }
+
+  &__subheaders {
+    color: color.$silver;
+    font-weight: 600;
+
+    @include bp.mobile {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    @include bp.tablet {
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__form-image {
+    border-radius: 4px;
+
+    @include bp.tablet {
+      width: 44rem;
+    }
+
+    @include bp.desktop {
+      width: 40rem;
+    }
+  }
+
+  &__form-input {
+    @include bp.mobile {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include bp.desktop {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  &__form-title {
+    display: flex;
+    flex-direction: column;
+
+    @include bp.mobile {
+      margin-bottom: 2.2rem;
+    }
+
+    @include bp.tablet {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__input-text {
+    border: 1.3px solid color.$mercury;
+    border-radius: 4px;
+    background-color: color.$alabaster;
+
+    padding: 1.5rem 1.2rem;
+
+    &::placeholder {
+      font-family: "Avenir";
+      color: color.$darkblack;
+    }
+  }
+
+  &__form-description {
+    @extend .upload__form-title;
+    margin-bottom: 0;
+  }
+
+  &__input-textarea {
+    @extend .upload__input-text;
+    resize: none;
+
+    @include bp.mobile {
+      margin: 1rem 0 2.2rem 0;
+      width: 100%;
+      height: 11rem;
+    }
+
+    @include bp.tablet {
+      height: 11rem;
+    }
+
+    @include bp.desktop {
+      height: 10.2rem;
+    }
+  }
+
+  &__buttons {
+    @include bp.mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include bp.tablet {
+      display: flex;
+      margin: 3rem 0;
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__buttons-cancel {
+    text-decoration: none;
+    background-color: color.$white;
+    padding: 1.5rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      border: 2px solid color.$blue;
+    }
+
+    @include bp.mobile {
+      width: 100%;
+      margin: 2.2rem 0;
+    }
+
+    @include bp.tablet {
+      width: 20vw;
+      margin-right: 3.5rem;
+    }
+
+    @include bp.desktop {
+      width: 19rem;
+    }
+
+    &-text {
+      color: color.$blue;
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin: 0 auto;
+    }
+  }
+}
