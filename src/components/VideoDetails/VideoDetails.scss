@@ -160,6 +160,7 @@
       @include bp.mobile {
         font-size: 1.65rem;
         font-weight: 600;
+        margin: 0.5rem 0;
       }
 
       @include bp.tablet {
@@ -357,7 +358,6 @@
 
   &__pp {
     background-color: color.$mercury;
-
     border-radius: 50%;
     @include bp.mobile {
       margin-right: 2rem;
@@ -366,13 +366,13 @@
     }
 
     @include bp.tablet {
-      margin-right: 2.3rem;
+      margin-right: 2.5rem;
       width: 5rem;
       height: 5rem;
     }
 
-    @include bp.tablet {
-      margin: 0 0 0 0;
+    @include bp.desktop {
+      margin: 0 0 0 0.5rem;
       width: 5rem;
       height: 5rem;
     }

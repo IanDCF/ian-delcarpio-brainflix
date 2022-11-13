@@ -3,21 +3,32 @@ import ViewsIcon from "../../assets/icons/views.svg";
 import LikesIcon from "../../assets/icons/likes.svg";
 import ProfilePic from "../ProfilePic/ProfilePic";
 import CommentIcon from "../../assets/icons/add_comment.svg";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
-const VideoDetails = ({ video }) => {
+const VideoDetails = ({ video, clickHandle, videoId }) => {
   const getDate = (timestamp) => {
     let date = new Date(timestamp).toLocaleDateString("en-US");
     return date;
   };
+
+  const params = useParams();
+
+  const vidId = params.vidId ? params.vidId : videoId;
+
+  useEffect(() => {
+    clickHandle(vidId);
+  }, [vidId]);
+
   return (
     <div className="details-container">
       <div className="details">
         <div className="details__all">
-          <h1 className="details__title">{video.title}</h1>
+          <h1 className="details__title">{video?.title}</h1>
 
           <div className="details__block">
             <div className="details__block-div">
-              <p className="details__name">By {video.channel}</p>
+              <p className="details__name">By {video?.channel}</p>
               <p className="details__date">07/11/2021</p>
             </div>
             <div className="details__block-div">
@@ -27,7 +38,7 @@ const VideoDetails = ({ video }) => {
                   src={ViewsIcon}
                   alt="Views Icon"
                 />
-                <p className="details__stats-total">{video.views}</p>
+                <p className="details__stats-total">{video?.views}</p>
               </div>
               <div className="details__stats">
                 <img
@@ -35,17 +46,17 @@ const VideoDetails = ({ video }) => {
                   src={LikesIcon}
                   alt="Likes Icon"
                 />
-                <p className="details__stats-total">{video.likes}</p>
+                <p className="details__stats-total">{video?.likes}</p>
               </div>
             </div>
           </div>
 
           <div className="details__description">
-            <p>{video.description}</p>
+            <p>{video?.description}</p>
           </div>
 
           <div className="details__comments-number">
-            <p>{video.comments.length} Comments</p>
+            <p>Comments</p>
           </div>
 
           <div className="details__comments-form">
@@ -81,7 +92,7 @@ const VideoDetails = ({ video }) => {
           </div>
 
           <div className="details__comments-list">
-            {video.comments.map((comment) => {
+            {video.comments?.map((comment) => {
               return (
                 <div className="details__comment" key={comment.id}>
                   <div className="details__comment-pp">

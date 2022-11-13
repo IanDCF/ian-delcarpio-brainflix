@@ -5,7 +5,7 @@ const VideoPlayer = ({ video }) => {
   return (
     <>
       <div className="video-container">
-        <video className="video" poster={video.image} type="video/mp4" />
+        <video className="video" poster={video?.image} type="video/mp4" />
       </div>
     </>
   );
