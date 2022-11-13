@@ -49,7 +49,7 @@ const UploadPage = () => {
         </form>
 
         <div className="upload__buttons">
-          <Link className="upload-btn">
+          <Link to="/success" className="upload-btn">
             <img
               className="upload-btn__icon"
               src={PublishIcon}
@@ -57,7 +57,10 @@ const UploadPage = () => {
             />
             <div className="upload-btn__text">PUBLISH</div>
           </Link>
-          <Link className="upload__buttons-cancel">
+          <Link
+            to="/84e96018-4022-434e-80bf-000ce4cd12b8"
+            className="upload__buttons-cancel"
+          >
             <div className="upload__buttons-cancel-text">CANCEL</div>
           </Link>
         </div>

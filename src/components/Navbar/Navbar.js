@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <header className="nav-container">
       <nav className="nav">
-        <Link to="/">
+        <Link to="/84e96018-4022-434e-80bf-000ce4cd12b8">
           <img className="nav__logo" src={Logo} alt="BrainFlix logo" />
         </Link>
 
