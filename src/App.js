@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/:vidId" element={<HomePage />} />
         <Route path="/upload" element={<UploadPage />} />
-        <Route path="/success" element={<SuccessPage />} />
+        <Route path="/upload/success" element={<SuccessPage />} />
       </Routes>
     </Router>
   );

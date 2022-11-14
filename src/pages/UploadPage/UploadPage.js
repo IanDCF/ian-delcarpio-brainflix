@@ -49,7 +49,7 @@ const UploadPage = () => {
         </form>
 
         <div className="upload__buttons">
-          <Link to="/success" className="upload-btn">
+          <Link to="/upload/success" className="upload-btn">
             <img
               className="upload-btn__icon"
               src={PublishIcon}
