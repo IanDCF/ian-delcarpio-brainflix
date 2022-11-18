@@ -4,21 +4,24 @@ import CompsDiv from "../../components/CompsDiv/CompsDiv";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import { useEffect } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 function HomePage() {
-  const [videoId, setVideoId] = useState(
-    "84e96018-4022-434e-80bf-000ce4cd12b8"
-  );
+  // const [videoId, setVideoId] = useState(
+  //   "84e96018-4022-434e-80bf-000ce4cd12b8"
+  // );
+
   const [videos, setVideos] = useState([]);
   const [videoDetails, setVideoDetails] = useState([]);
 
-  const apiKey = "3ab67408-e6b5-49e1-b43f-a0c0cc6a7703";
-  const videosListURL = `https://project-2-api.herokuapp.com/videos?api_key=${apiKey}`;
-  const videoDetailsURL = `https://project-2-api.herokuapp.com/videos/${videoId}?api_key=${apiKey}`;
+  const { vidId } = useParams();
+  const videoId = vidId;
+
+  const backEnd = `http://localhost:8080/videos`;
 
   const fetchVideos = async () => {
     try {
-      const { data } = await axios.get(videosListURL);
+      const { data } = await axios.get(`${backEnd}`);
       const videosArr = [...data];
       setVideos(videosArr);
     } catch (error) {
@@ -27,11 +30,11 @@ function HomePage() {
   };
   useEffect(() => {
     fetchVideos(videoId);
-  }, []);
+  }, [videoId]);
 
   const fetchVideoDetails = async () => {
     try {
-      const { data } = await axios.get(videoDetailsURL);
+      const { data } = await axios.get(`${backEnd}/${videoId}`);
       setVideoDetails(data);
     } catch (error) {
       console.log(error);
@@ -39,15 +42,10 @@ function HomePage() {
   };
   useEffect(() => {
     fetchVideoDetails();
-  }, []);
-
-  const videoClicked = (vidId) => {
-    return `https://project-2-api.herokuapp.com/videos/${vidId}?api_key=${apiKey}`;
-  };
+  }, [videoId]);
 
   const clickHandle = async (vidId) => {
-    const { data } = await axios.get(videoClicked(vidId));
-    setVideoId(vidId);
+    const { data } = await axios.get(`${backEnd}/${vidId}`);
     setVideoDetails(data);
   };
 
