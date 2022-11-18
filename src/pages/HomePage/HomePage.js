@@ -7,10 +7,6 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 function HomePage() {
-  // const [videoId, setVideoId] = useState(
-  //   "84e96018-4022-434e-80bf-000ce4cd12b8"
-  // );
-
   const [videos, setVideos] = useState([]);
   const [videoDetails, setVideoDetails] = useState([]);
 
