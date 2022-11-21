@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./HomePage.scss";
 import CompsDiv from "../../components/CompsDiv/CompsDiv";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import { useEffect } from "react";

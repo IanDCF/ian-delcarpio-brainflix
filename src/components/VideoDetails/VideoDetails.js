@@ -56,7 +56,7 @@ const VideoDetails = ({ video, clickHandle, videoId }) => {
           </div>
 
           <div className="details__comments-number">
-            <p>Comments</p>
+            <p>{video.comments?.length} Comments</p>
           </div>
 
           <div className="details__comments-form">
