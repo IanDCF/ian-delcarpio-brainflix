@@ -47,6 +47,12 @@
       flex-direction: column;
     }
 
+    button {
+      background: none;
+      border: none;
+      outline: none;
+    }
+
     @include bp.tablet {
       border-top: 1.3px solid color.$mercury;
       border-bottom: 1.3px solid color.$mercury;
@@ -141,6 +147,7 @@
     &::placeholder {
       font-family: "Avenir";
       color: color.$darkblack;
+      font-weight: 400;
     }
   }
 
